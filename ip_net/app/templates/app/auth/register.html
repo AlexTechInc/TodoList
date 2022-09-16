@@ -1,0 +1,46 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% block head %}
+
+<title>
+        Hello, please login    
+</title>
+
+<link rel="stylesheet" href={% static 'app/css/main.css' %}>
+
+{% endblock head %}
+
+{% block body %}
+
+<main class="form-signin w-100 m-auto">
+    <form>
+        <h1 class="h3 mb-3 fw-normal">Please register</h1>
+
+        <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" minlength="8" maxlength="32">
+            <label for="floatingPassword">Password</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPasswordRepeat" placeholder="Repeat password" minlength="8" maxlength="32">
+            <label for="floatingPasswordRepeat">Repeat password</label>
+        </div>
+
+        {% csrf_token %}
+
+        <button class="w-100 btn btn-lg btn-primary register-button" type="submit">Create account</button>
+        <p>Have an account? <a href="/login">Login</a></p>
+    </form>
+
+    <strong class="messagebox"></strong>
+</main>
+
+<script src={% static 'app\js\jquery-3.6.1.min.js' %}></script>
+<script src={% static 'app\js\main.js' %}></script>
+
+{% endblock body %}
+

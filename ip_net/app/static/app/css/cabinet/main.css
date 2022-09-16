@@ -1,0 +1,21 @@
+/* Show it's not fixed to the top */
+
+#navbarCollapse {
+    margin-left: 20px;
+}
+
+
+
+
+.logout-button {
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+}
+
+.container.main {
+    border: 3px solid black;
+}
+
+
+

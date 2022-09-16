@@ -1,0 +1,62 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% block head %}
+
+<title>
+    Cabinet 
+</title>
+
+<link rel="stylesheet" href={% static 'app/css/cabinet/main.css' %}>
+
+{% csrf_token %}
+
+{% endblock head %}
+
+{% block body %}
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <a class="navbar-brand ml-3" href="#">Cabinet</a>
+
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Hello, {{ username }}</a>
+            </li>
+        </ul>
+
+        <button class="btn btn-outline-warning my-2 my-sm-0 logout-button" type="submit">Logout</button>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4>Your todo's</h4></li>
+            <li class="list-group-item">
+                <h5>
+                    Create new todo
+                </h5>
+                
+                <div style="white-space: nowrap; vertical-align: middle;">
+                    <input type="text" placeholder="Todo name" id="new_name" style="display: inline-block;">
+                    <input type="color" id="new_color" style="height: 24px; display: inline-block;">
+                    <input type="button" class="btn btn-success" value="Create" id="new_button" style="display: inline-block;">
+                    <strong class="text-danger" id="new_error"></strong>
+                </div>
+                
+            </li>
+
+            <li class="list-group-item" id="todo_main_container">
+
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script src={% static 'app\js\jquery-3.6.1.min.js' %}></script>
+<script src={% static 'app\js\main.js' %}></script>
+<script src={% static 'app\js\todo.js' %}></script>
+
+
+{% endblock body %}
